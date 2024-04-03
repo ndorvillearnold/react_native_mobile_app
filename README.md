@@ -25,3 +25,7 @@ npm install typescript -D
 npm install --save react-native-vector-icons
 npm install -D @tsconfig/react-native @types/jest @types/react @types/react-test-renderer typescript
 npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar
+
+
+Project in progress
+![image](https://github.com/ndorvillearnold/react_native_mobile_app/assets/43937188/b524f6e7-1b49-4de8-828c-8aaf8e24936b)
