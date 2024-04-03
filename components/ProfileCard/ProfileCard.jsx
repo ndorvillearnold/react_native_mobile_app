@@ -1,46 +1,66 @@
 import { s } from "./ProfileCard.style";
 import { FontAwesome } from "@expo/vector-icons";
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import { View, Text, Image, TouchableOpacity, Linking } from "react-native";
 
-export default function App() {
+export function ProfileCard({
+	firstName,
+	lastName,
+	age,
+	onPresssSocialMediaIcon,
+}) {
+	const handleEmailPress = () => {
+		const email = "ndorvillearnold@gmail.com";
+		const mailtoUrl = `mailto:${email}`;
+		Linking.openURL(mailtoUrl);
+	};
 	return (
 		<View style={s.container}>
 			<View style={s.header}>
 				<View>
 					<Image
 						style={s.avatar}
-						// source = {{url: "assets/smiling_avatar.jpg"}}
-						source={{ uri: "https://i.pravatar.cc/300" }}
+						source={require("../../assets//smiling_avatar.jpg")}
 					/>
+
+					{/* 
+				<Image style={s.avatar} source={{ uri: "https://i.pravatar.cc/300" }} /> */}
+
+					{/* source = {{ "assets/smiling_avatar.jpg"}} */}
 				</View>
 				<View style={s.texts}>
-					<TouchableOpacity onPress={onPressTitle_}>
-						<Text style={s.name}>
-							{firstName}
-							{lastName}
-							{age}
-						</Text>
-					</TouchableOpacity>
-					<Text>
-						Hi I am React native developer, let's get in touch, and soon.
+					<Text style={s.name}>
+						{firstName}
+						{lastName}
+						{age}
 					</Text>
-					{isOpenToWork ? (
-						<Text>I am available to work to work at this time! </Text>
-					) : (
-						<Text>"I am not avalable to work right now"</Text>
-					)}
+
+					<Text>Hi I am Software Developer, let's get in touch!.</Text>
 				</View>
 			</View>
 
 			<View style={s.social}>
-				<TouchableOpacity style={s.socialBtn}>
+				<TouchableOpacity
+					onPress={() => onPresssSocialMediaIcon("Twitter")}
+					style={s.socialBtn}
+				>
 					<FontAwesome name="twitter" size={24} color="#1DA1F2" />
 				</TouchableOpacity>
-				<TouchableOpacity style={s.socialBtn}>
+
+				{/* You can just add twitter we had to add a function to the Onpress so it can keep switching and not automaticall run with first option */}
+				<TouchableOpacity
+					onPress={() => onPresssSocialMediaIcon("LinkedIn")}
+					style={s.socialBtn}
+				>
 					<FontAwesome name="linkedin-square" size={24} color="#0A66C2" />
 				</TouchableOpacity>
-				<TouchableOpacity style={s.socialBtn}>
+				<TouchableOpacity
+					onPress={() => onPresssSocialMediaIcon("Github")}
+					style={s.socialBtn}
+				>
 					<FontAwesome name="github" size={24} color="#333" />
+				</TouchableOpacity>
+				<TouchableOpacity onPress={handleEmailPress} style={s.socialBtn}>
+					<FontAwesome name="envelope" size={24} color="#FFA500" />
 				</TouchableOpacity>
 			</View>
 		</View>
