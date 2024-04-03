@@ -28,4 +28,5 @@ npx expo install expo-router react-native-safe-area-context react-native-screens
 
 
 Project in progress
-![image](https://github.com/ndorvillearnold/react_native_mobile_app/assets/43937188/b524f6e7-1b49-4de8-828c-8aaf8e24936b)
+![image](https://github.com/ndorvillearnold/react_native_mobile_app/assets/43937188/719a9d30-b749-4a81-b41d-9a4b63548e70)
+
