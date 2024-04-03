@@ -21,6 +21,7 @@ export default function App() {
         url = "https://twitter.com/Naomy19601982/"
         break
       case "Email":
+        //email info
         const email = 'mailto:ndorvillearnold@gmail.com';
         Linking.openURL(email);
         return; // Stop further execution
